@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(255, 214, 80);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid black;
+    background-color: lightgreen;
+    display: flex 2;
+
+}
+
+.button1 {
+    background-color: rgb(26, 107, 61);
+    border-radius: 30px;
+    height: 50px;
+    width: 100px;
+    margin: 20px;
+}
+
+.title {
+    font-family: papyrus, fantasy;
+    border: solid darkgreen;
+    border-radius: 25px;
+    text-align: center;
+    text-shadow: 2px 2px 5px green;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 50%;
+    filter: drop-shadow(8px 8px 10px black);
+
+}
+
+.effects {
+    filter: saturate(2);
+    filter: contrast(2);
+    filter: invert();
+}
+
+.color1 {
+    background-color: rgb(26, 107, 61);
+}
+
+.color2 {
+    background-color: seagreen;
+}

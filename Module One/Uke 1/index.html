@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var Counter</title>
+    <style>
+        div {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            /*flex-direction: row;*/
+        }
+        
+        .buttonS {
+            color: black;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="minusOne()" class="buttonS">-1</button>
+        <div id="output">0</div>
+        <Button onclick="plussOne()" class="buttonS">+1</Button>
+    </div>
+    <script>
+
+        let counter = 0
+
+        function plussOne() {
+            counter = Number(counter) + 1;
+            document.getElementById('output').innerHTML = counter;
+        }
+
+        function minusOne() {
+            counter = Number(counter) - 1;
+            document.getElementById('output').innerHTML = counter;
+        }
+
+    </script>
+
+</body>
+
+</html>

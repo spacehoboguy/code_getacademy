@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox & Grid</title>
+    <style>
+        .paragraphfull {
+            display: flex;
+            gap: 10%;
+            align-content: space-around;
+        }
+
+        .paragraphfull {
+
+            display: grid;
+            gap: 1rem;
+            grid-template-areas:
+                "par  par"
+                "par  par";
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        .paragraph {
+            clip-path: polygon(55% 0, 61% 35%, 98% 35%, 68% 57%, 100% 100%, 50% 70%, 0 100%, 32% 57%, 0 38%, 39% 35%);
+        }
+
+        .paragraph-bred {
+            grid-column: span 4/auto;
+
+        }
+
+        .paragraph-høy {
+            grid-row: span 4/ auto;
+        }
+
+        /*  .animertparagraf {
+            height: 85vh;
+            display: grid;
+            gap: 1rem;
+
+            grid-template-areas:
+                'a  b  c  d'
+                'l  Z  Z  e'
+                'k  Z  Z  f'
+                'j  i  h  g';
+
+            grid-template-rows: repeat(4, 25%);
+            grid-template-columns: 240px auto auto 240px;
+
+        }
+
+        .paragraf:nth-child(1) {
+            grid-area: a;
+        }
+
+        .paragraf:nth-child(2) {
+            grid-area: b;
+        }
+
+        .paragraf:nth-child(3) {
+            grid-area: c;
+        }
+
+        .paragraf:nth-child(4) {
+            grid-area: d;
+        }
+
+        .paragraf:nth-child(5) {
+            grid-area: e;
+        }
+
+        .paragraf:nth-child(6) {
+            grid-area: f;
+        }
+
+        .paragraf:nth-child(7) {
+            grid-area: g;
+        }
+
+        .paragraf:nth-child(8) {
+            grid-area: h;
+        }
+
+        .paragraf:nth-child(9) {
+            grid-area: i;
+        }
+
+        .paragraf:nth-child(10) {
+            grid-area: j;
+        }
+
+        .paragraf:nth-child(11) {
+            grid-area: k;
+        }
+
+        .paragraf:nth-child(12) {
+            grid-area: l;
+        }
+
+        .paragraf:last-child {
+            grid-area: Z;
+        }*/
+    </style>
+</head>
+
+<body>
+    <div class="paragraphfull">
+        <div class="paragraph"> a Atlas Shrugged is a 1957 novel by Ayn Rand. It was her longest novel, the fourth and
+            final one published
+            during her lifetime, and the one she considered her magnum opus in the realm of fiction writing.[1] Atlas
+            Shrugged includes elements of science fiction, mystery, and romance, and it contains Rand's most extensive
+            statement of Objectivism in any of her works of fiction. Rand described the theme of Atlas Shrugged as "the
+            role
+            of man's mind in existence". </div>
+
+        <div class="paragraph">b The book explores a number of philosophical themes from which Rand would subsequently
+            develop Objectivism,
+            including reason, property rights, individualism, and capitalism, and depicts what Rand saw as the failures
+            of
+            governmental coercion.
+
+            The book depicts a dystopian United States in which private businesses suffer under increasingly burdensome
+            laws
+            and regulations. Railroad executive Dagny Taggart and her lover, steel magnate Hank Rearden, struggle
+            against
+            "looters" who want to exploit their productivity.</div>
+
+        <div class="paragraph">c They discover that a mysterious figure called John Galt
+            is persuading other business leaders to abandon their companies and disappear as a strike of productive
+            individuals
+            against the looters. The novel ends with the strikers planning to build a new capitalist society based on
+            Galt's
+            philisophy.</div>
+
+        <div class="paragraph">d
+            Atlas Shrugged received largely negative reviews, but achieved enduring popularity and ongoing sales in the
+            following decades. The novel has been cited as an influence on a variety of libertarian and conservative
+            thinkers
+            and politicians. After several unsuccessful attempts to adapt the novel for film or television, a film
+            trilogy
+            based
+            on it was released from 2011 to 2014, and two theatrical adaptations have been staged.</div>
+        <div class="paragraph"> eAtlas Shrugged is a 1957 novel by Ayn Rand. It was her longest novel, the fourth and
+            final one published
+            during her lifetime, and the one she considered her magnum opus in the realm of fiction writing.[1] Atlas
+            Shrugged includes elements of science fiction, mystery, and romance, and it contains Rand's most extensive
+            statement of Objectivism in any of her works of fiction. Rand described the theme of Atlas Shrugged as "the
+            role
+            of man's mind in existence". </div>
+
+        <div class="paragraph"> fThe book explores a number of philosophical themes from which Rand would subsequently
+            develop Objectivism,
+            including reason, property rights, individualism, and capitalism, and depicts what Rand saw as the failures
+            of
+            governmental coercion.
+
+            The book depicts a dystopian United States in which private businesses suffer under increasingly burdensome
+            laws
+            and regulations. Railroad executive Dagny Taggart and her lover, steel magnate Hank Rearden, struggle
+            against
+            "looters" who want to exploit their productivity.</div>
+
+        <div class="paragraph">g They discover that a mysterious figure called John Galt
+            is persuading other business leaders to abandon their companies and disappear as a strike of productive
+            individuals
+            against the looters. The novel ends with the strikers planning to build a new capitalist society based on
+            Galt's
+            philisophy.</div>
+
+        <div class="paragraph">h
+            Atlas Shrugged received largely negative reviews, but achieved enduring popularity and ongoing sales in the
+            following decades. The novel has been cited as an influence on a variety of libertarian and conservative
+            thinkers
+            and politicians. After several unsuccessful attempts to adapt the novel for film or television, a film
+            trilogy
+            based
+            on it was released from 2011 to 2014, and two theatrical adaptations have been staged.</div>
+        <div class="paragraph">i Atlas Shrugged is a 1957 novel by Ayn Rand. It was her longest novel, the fourth and
+            final one published
+            during her lifetime, and the one she considered her magnum opus in the realm of fiction writing.[1] Atlas
+            Shrugged includes elements of science fiction, mystery, and romance, and it contains Rand's most extensive
+            statement of Objectivism in any of her works of fiction. Rand described the theme of Atlas Shrugged as "the
+            role
+            of man's mind in existence". </div>
+
+        <div class="paragraph">j The book explores a number of philosophical themes from which Rand would subsequently
+            develop Objectivism,
+            including reason, property rights, individualism, and capitalism, and depicts what Rand saw as the failures
+            of
+            governmental coercion.
+
+            The book depicts a dystopian United States in which private businesses suffer under increasingly burdensome
+            laws
+            and regulations. Railroad executive Dagny Taggart and her lover, steel magnate Hank Rearden, struggle
+            against
+            "looters" who want to exploit their productivity.</div>
+
+        <div class="paragraph">k They discover that a mysterious figure called John Galt
+            is persuading other business leaders to abandon their companies and disappear as a strike of productive
+            individuals
+            against the looters. The novel ends with the strikers planning to build a new capitalist society based on
+            Galt's
+            philisophy.</div>
+
+        <div class="paragraph">l
+            Atlas Shrugged received largely negative reviews, but achieved enduring popularity and ongoing sales in the
+            following decades. The novel has been cited as an influence on a variety of libertarian and conservative
+            thinkers
+            and politicians. After several unsuccessful attempts to adapt the novel for film or television, a film
+            trilogy
+            based
+            on it was released from 2011 to 2014, and two theatrical adaptations have been staged.</div>
+        <div class="paragraph">Z Atlas Shrugged is a 1957 novel by Ayn Rand. It was her longest novel, the fourth and
+            final one published
+            during her lifetime, and the one she considered her magnum opus in the realm of fiction writing.[1] Atlas
+            Shrugged includes elements of science fiction, mystery, and romance, and it contains Rand's most extensive
+            statement of Objectivism in any of her works of fiction. Rand described the theme of Atlas Shrugged as "the
+            role
+            of man's mind in existence". </div>
+
+        <div class="paragraph">Z The book explores a number of philosophical themes from which Rand would subsequently
+            develop Objectivism,
+            including reason, property rights, individualism, and capitalism, and depicts what Rand saw as the failures
+            of
+            governmental coercion.
+
+            The book depicts a dystopian United States in which private businesses suffer under increasingly burdensome
+            laws
+            and regulations. Railroad executive Dagny Taggart and her lover, steel magnate Hank Rearden, struggle
+            against
+            "looters" who want to exploit their productivity.</div>
+
+        <div class="paragraph">Z They discover that a mysterious figure called John Galt
+            is persuading other business leaders to abandon their companies and disappear as a strike of productive
+            individuals
+            against the looters. The novel ends with the strikers planning to build a new capitalist society based on
+            Galt's
+            philisophy.</div>
+
+        <div class="paragraph">Z
+            Atlas Shrugged received largely negative reviews, but achieved enduring popularity and ongoing sales in the
+            following decades. The novel has been cited as an influence on a variety of libertarian and conservative
+            thinkers
+            and politicians. After several unsuccessful attempts to adapt the novel for film or television, a film
+            trilogy
+            based
+            on it was released from 2011 to 2014, and two theatrical adaptations have been staged.</div>
+    </div>
+
+
+
+</body>
+
+</html>

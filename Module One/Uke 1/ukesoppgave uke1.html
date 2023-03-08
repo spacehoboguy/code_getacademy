@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uke 1 oppgave</title>
+    <link rel="stylesheet" href="style.css"\>
+ 
+</head>
+
+<body id="bg">
+    <h2 class="title">Philip Olafsen</h2>
+
+    <div class="image">
+        <img src="121833000.jpg" alt="Philip Olafsen">
+    </div>
+
+    <button class="button1" onclick="backgroundSwap()">Background Swap</button>
+
+    <div class="card">
+        <div class="header color1" onclick="show1()">Om Meg</div>
+        <div id="omPhilip1"></div>
+    </div>
+
+    <div class="card">
+        <div class="header color2" onclick="show2()">Mine Hobbier</div>
+        <div id="omPhilip2"></div>
+    </div>
+
+    <script>
+
+        function show1() {
+            blankAll();
+            document.getElementById('omPhilip1').innerHTML = /*HTML*/ `
+            <ul>
+                <li>Alder: 25</li>
+                <li>Bosted: Fredrikstad</li>
+                <li>Favoritt måltid: Pasta Carbonara</li>
+                <li>Favoritt musikk: Jazz</li>
+            </ul>
+                `
+                ;
+        }
+
+        function show2() {
+            blankAll();
+            document.getElementById('omPhilip2').innerHTML = /*HTML*/`
+            <ul>
+                <li>Trene</li>
+                <li>Spille med venner</li>
+                <li>Gå tur og høre på musikk</li>
+                <li>Høre på podcaster</li>
+            </ul>
+             `
+        }
+
+        let theme = true
+        function backgroundSwap() {
+            if (theme === true) {
+                document.getElementById('bg').style.backgroundColor = "purple";
+                //document.getElementById('bg').style.color = "white";
+                theme = false;
+            } else {
+                document.getElementById('bg').style.backgroundColor = "rgb(255, 214, 80)";
+                document.getElementById('bg').style.color = "black";
+                theme = true;
+            }
+        }
+
+        function blankAll() {
+            document.getElementById('omPhilip1').innerHTML = '';
+            document.getElementById('omPhilip2').innerHTML = '';
+        }
+
+    </script>
+
+</body>
+
+</html>
