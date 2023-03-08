@@ -1,0 +1,103 @@
+
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "JetBrains Mono", monospace;
+        background-color: #2e3440;
+        color: #eceff4;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 8rem;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .textField {
+        width: 60rem;
+        font-size: 2rem;
+      }
+
+      button {
+        width: 11rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        margin: 1rem 0.3rem;
+        border: none;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transition: ease 0.2s;
+      }
+
+      button:hover {
+        background-color: #3b4252;
+        cursor: pointer;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 0px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        text-shadow: 0 0 8px #eceff4;
+      }
+
+      button.pressed {
+        background-color: #3b4252;
+        cursor: default;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 0px;
+      }
+
+      .b1,
+      word1 {
+        color: #bf616a;
+        text-shadow: 0 0 10px #bf616a, 0 0 30px #bf616a;
+        background-color: transparent;
+      }
+
+      .b2,
+      word2 {
+        color: #d08770;
+        text-shadow: 0 0 10px #d08770, 0 0 30px #d08770;
+        background-color: transparent;
+      }
+
+      .b3,
+      word3 {
+        color: #8fbcbb;
+        text-shadow: 0 0 10px #8fbcbb, 0 0 30px #8fbcbb;
+        background-color: transparent;
+      }
+
+      .b4,
+      word4 {
+        color: #5e81ac;
+        text-shadow: 0 0 10px #5e81ac, 0 0 30px #5e81ac;
+        background-color: transparent;
+      }
+
+      .b5,
+      word5 {
+        color: #b48ead;
+        text-shadow: 0 0 10px #b48ead, 0 0 30px #b48ead;
+        background-color: transparent;
+      }
+
+      /* SCALINGSTUFF FROM https://websemantics.uk/tools/responsive-font-calculator/ */
+      @media (min-width: 20em) {
+        :root {
+          font-size: calc(0.54rem + ((1vw - 0.48rem) * 0.6944));
+          min-height: 0vw;
+        }
+      }
+      @media (min-width: 120em) {
+        :root {
+          font-size: 1.1rem;
+        }
+      }
+    

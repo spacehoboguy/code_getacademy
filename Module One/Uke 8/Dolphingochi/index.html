@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dolphinochi</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+      #main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      #tamaImgDiv {
+        width: 15rem;
+        height: 15rem;
+        background-color: aqua;
+        border-radius: 1rem;
+      }
+
+      .bars {
+        display: flex;
+        
+      }
+
+      .barContainer {
+        
+      }
+
+      .backgroundBar {
+        background-color: grey;
+        width: 40rem;
+        height: 5rem;
+        border-radius: 1rem;
+      }
+      .foregroundBar {
+        position: fixed;
+        height: 5rem;
+        border-radius: 1rem;
+        text-align: center;
+      }
+
+      .foregroundBar.food {
+        background-color: greenyellow;
+        width: 30rem;
+      }
+      .foregroundBar.sleep {
+        background-color: red;
+        width: 10rem;
+      }
+      .foregroundBar.happy {
+        background-color: yellow;
+        width: 20rem;
+      }
+      .foregroundBar.health {
+        background-color: greenyellow;
+        width: 38rem;
+      }
+      .addButton {
+        width: 10rem;
+        height: 5rem;
+        margin-left: 2rem;
+        border-radius: 1rem;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+        <h1>Dolphinochi</h1>
+      <div id="tamaImgDiv"></div>
+      <div class="barContainer">
+        <div class="bars" id="foodBars">
+          <div class="backgroundBar"></div>
+          <div class="foregroundBar food">75%</div>
+          <button class="addButton">give food</button>
+        </div>
+        </div>
+          <div class="bars" id="sleepBar">
+            <div class="bars" id="sleepBars">
+                <div class="backgroundBar"></div>
+                <div class="foregroundBar sleep">25%</div>
+                <button class="addButton">sleep</button>
+            </div>
+        </div>
+        <div class="bars" id="happyBar">
+            <div class="bars" id="happyBars">
+                <div class="backgroundBar"></div>
+                <div class="foregroundBar happy">50%</div>
+                <button class="addButton">play</button>
+            </div>
+        </div>
+        <div class="bars" id="healthBar">
+            <div class="bars" id="healthBars">
+                <div class="backgroundBar"></div>
+                <div class="foregroundBar health">98%</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

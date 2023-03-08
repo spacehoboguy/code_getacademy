@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farge endring i divver</title>
+    <style>
+        .box {
+            height: 10vh;
+            width: 10vh;
+            border: solid purple;
+            background-color: chartreuse;
+            margin: 10px;
+        }
+
+        .selectedbox {
+            border: dotted yellow;
+
+        }
+    </style>
+</head>
+
+<body id="bgColorPage">
+    <div id="boks1" class="box" onclick="changeBgColor('green', 'boks1')"> GREEN</div>
+    <div id="boks2" class="box" onclick="changeBgColor('red', 'boks2')"> RED</div>
+    <div id="boks3" class="box" onclick="changeBgColor('blue', 'boks3')"> BLUE</div>
+    <div id="boks4" class="box" onclick="divFarge()"> </div>
+    <div id="boks5" class="box" onclick=""> </div>
+
+
+    <script>
+        var colorID = "";
+        
+        function changeBgColor(color, boksID) {
+            document.getElementById('bgColorPage').style.backgroundColor = color;
+            color = colorID;
+            document.getElementById(`${boksID}`).classList.add("selectedbox");
+           
+        }
+
+        console.log(colorID, "<---Color ID")
+
+        function divFarge() {
+
+            
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script>
+        //model
+   
+        let infoDiv = "";
+        
+        let selectedBunn = "";
+        let selectedFyll = "";
+        let selectedSize = "";
+        let selectedSaus = "";
+
+        buttonSelectedOrNot = "disabled";
+
+        //view
+        updateView();
+        function updateView(){
+            document.getElementById('app').innerHTML = /*HTML*/`
+                <h3>Pizza-bestilling</h3>
+                <div style="padding-bottom: 20px;"></div>
+
+                Bunn: <input id="tykkBunn" type="radio" name="bunn" onchange="info('tykk')" ${selectedBunn == "tykk" ? "checked" : ""}/>Tykk
+                <input id="tynnBunn" type="radio" name="bunn" onchange="info('tynn')" />Tynn <br />
+
+                Fyll: <input id="fyllTaco" type="radio" name="fyll" onchange="info()" />Taco
+                <input id="fyllKylling" type="radio" name="fyll" onchange="info()" />Kylling
+                <input id="fyllPepperoni" type="radio" name="fyll" onchange="info()" />Pepperoni<br />
+
+                Størrelse: <input id="stor" type="radio" name="str" onchange="info()" />Stor
+                <input id="middels" type="radio" name="str" onchange="info()" />Middels
+                <input id="liten" type="radio" name="str" onchange="info()" />Liten<br />
+
+                Saus: <input id="hvit" type="radio" name="saus" onchange="info('hvit')" />Hvit
+                <input id="rød" type="radio" name="saus" onchange="info('rød')" />Rød<br />
+
+                <button id="bestill" ${buttonSelectedOrNot} onclick="alert('Bestilt!');">Bestill</button>
+                <ul>
+                    <li>Oppgave: Legg til et fyll til</li>
+                    <li>Oppgave: Legg til en ting til i pizza-bestillingen, for eksempel firkantet eller rund pizza</li>
+                </ul>
+                ${infoDiv}
+            `;
+        }
+        //controller
+        function info(){
+
+        }
+        function selectBunn(){
+
+        }
+        function selectFyll(){
+
+        }
+        function selectSaus(){
+
+        }
+        function selectSize(){
+
+        }
+
+    </script>
+</body>
+</html>

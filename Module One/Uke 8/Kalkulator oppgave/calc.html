@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Kalkulator</title>
+    <style type="text/css">
+        div {
+            float: left;
+            background-color: beige;
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-family: helvetica;
+            font-size: 200%;
+            border: #bbbbaa solid 4px;
+            border-radius: 10px;
+        }
+
+            div.resultBox {
+                width: 344px;
+                text-align: right;
+            }
+
+            div.firstInRow {
+                clear: left;
+            }
+    </style>
+</head>
+<body>
+    <p id="app"></p>
+   <!--  <div id="resultBox" class="resultBox" id="screen"></div>
+
+    <div class="firstInRow" onclick="addCharacter(7)">7</div>
+    <div onclick="addCharacter(8)">8</div>
+    <div onclick="addCharacter(9)">9</div>
+    <div onclick="addCharacter('÷')">÷</div>
+
+    <div class="firstInRow" onclick="addCharacter(4)">4</div>
+    <div onclick="addCharacter(5)">5</div>
+    <div onclick="addCharacter(6)">6</div>
+    <div onclick="addCharacter('×')">×</div>
+
+    <div class="firstInRow" onclick="addCharacter(1)">1</div>
+    <div onclick="addCharacter(2)">2</div>
+    <div onclick="addCharacter(3)">3</div>
+    <div onclick="addCharacter('-')">-</div>
+
+    <div class="firstInRow" onclick="addCharacter(0)">0</div>
+    <div onclick="clearResult();">C</div>
+    <div onclick="calculate()">=</div>
+    <div onclick="addCharacter('+')">+</div> -->
+
+<script type="text/javascript">
+    //MODEL
+    let resultBox = '';
+
+    //VIEW
+    updateView();
+    function updateView(){
+        document.getElementById('app').innerHTML = /*HTML*/`
+        <div class="resultBox">${resultBox}</div>
+
+        <div class="firstInRow" onclick="addCharacter(7)">7</div>
+        <div onclick="addCharacter(8)">8</div>
+        <div onclick="addCharacter(9)">9</div>
+        <div onclick="addCharacter('÷')">÷</div>
+
+        <div class="firstInRow" onclick="addCharacter(4)">4</div>
+        <div onclick="addCharacter(5)">5</div>
+        <div onclick="addCharacter(6)">6</div>
+        <div onclick="addCharacter('*')">*</div>
+
+        <div class="firstInRow" onclick="addCharacter(1)">1</div>
+        <div onclick="addCharacter(2)">2</div>
+        <div onclick="addCharacter(3)">3</div>
+        <div onclick="addCharacter('-')">-</div>
+
+        <div class="firstInRow" onclick="addCharacter(0)">0</div>
+        <div onclick="clearResult();">C</div>
+        <div onclick="calculate()">=</div>
+        <div onclick="addCharacter('+')">+</div> 
+        `
+    }
+    
+    
+    //CONTROLLER
+    function addCharacter(x) {
+        resultBox += x;
+        updateView();
+    }
+
+    function calculate() {
+        var calculation = resultBox
+        resultBox = eval(calculation);
+        updateView();
+    }
+    function clearResult() {
+        resultBox = '';
+        updateView();
+    }
+</script>
+</body>
+</html>

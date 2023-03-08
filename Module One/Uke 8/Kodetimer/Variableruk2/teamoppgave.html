@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap');
+
+        * {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0px;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .continer {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .row {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .nav {
+            display: flex;
+            height: 130px;
+            background-color: #D9D9D9;
+        }
+
+        .logoBox {
+            display: flex;
+            align-items: center;
+        }
+
+        .cards {
+            display: flex;
+            height: max-content;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .cartContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* display: inline;  none*/
+            width: 300px;
+            overflow: hidden;
+            margin-left: auto;
+            transition: 200ms;
+        }
+
+        .cartContainer:hover {
+            overflow: visible;
+            height: fit-content;
+            z-index: 1;
+            background-color: #afaeae;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .cartItem {
+            display: flex;
+            border: 1px solid rgb(206, 206, 206);
+            justify-self: end;
+            justify-content: space-evenly;
+            width: 100%;
+            align-items: center;
+            background-color: white;
+        }
+        .cartTotal {
+            display: flex;
+            border: 1px solid rgb(206, 206, 206);
+            justify-self: end;
+            justify-content:space-evenly;
+            width: 100%;
+            align-items: left;
+            background-color: white;
+        }
+
+        .cartButton {
+            margin-bottom: 70px;
+            margin-top: 50px;
+        }
+
+        .cartImg {
+            height: 80px;
+    
+        }
+
+
+        .item-card {
+            display: flex;
+            width: 300px;
+            flex-flow: column;
+            align-items: center;
+            height: fit-content;
+            background-color: #D9D9D9;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            margin: 50px;
+            border-radius: 5%;
+        }
+
+        .item-card:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .logoImg {
+            width: 100px;
+            height: auto;
+        }
+
+        .prodImg {
+            max-width: 300px;
+            overflow: hidden;
+            border-top-left-radius: 5%;
+            border-top-right-radius: 5%;
+        }
+
+        .addBtn {
+            margin-bottom: 20px;
+            border: none;
+            background-color: #029160;
+            border-radius: 15px;
+            height: 50px;
+            width: 100px;
+            color: white;
+
+        }
+
+        .addBtn:hover {
+            background-color: #05c07f;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .addBtn:disabled {
+            background-color: #afaeae;
+            color: #D9D9D9;
+        }
+
+        .dButton {
+            background-color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="continer">
+        <div class="nav">
+
+            <div class="logoBox">
+                <img class="logoImg"
+                    src="https://media.discordapp.net/attachments/1059366256970575962/1064510065224204308/pngwing.com.png?width=508&height=582"
+                    alt="dolphinImg">
+                <h1>Dolphin Pro</h1>
+            </div>
+
+            <div id="cartID" class="cartContainer">
+                <div class="cartButton">
+                    <h4>Cart</h4>
+                </div>
+                
+                <Div class="cartTotal">Total: </Div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="cards">
+                <div class="item-card">
+                    <img class="prodImg" src="shoe2.webp" />
+                    <h2>Shoe 1</h2>
+                    <h4>$200</h4>
+                    <button class="addBtn" id="item1">Add to cart</button>
+                </div>
+                <div class="item-card">
+                    <img class="prodImg" src="shoe3.webp" />
+                    <h2>Item 2</h2>
+                    <h4>$200</h4>
+                    <button class="addBtn" id="item2">Add to cart</button>
+                </div>
+                <div class="item-card">
+                    <img class="prodImg" src="shoe2.webp" />
+                    <h2>Item 3</h2>
+                    <h4>$200</h4>
+                    <button class="addBtn" id="item3">Add to cart</button>
+                </div>
+                <div class="item-card">
+                    <img class="prodImg" src="shoe3.webp" />
+                    <h2>Item 4</h2>
+                    <h4 id="">$200</h4>
+                    <button class="addBtn" id="item4">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(itemID, imgSrc) {
+            document.getElementById('cartID').innerHTML += `
+            <div class="cartItem">
+                    <img class="cartImg" src="${imgSrc}" alt="">
+                    <h4>${itemID}</h4>
+                    <h4>${price}</h4>
+                    <button>+</button>
+                    <div>1</div>
+                    <button>-</button>
+            </div>`
+        }
+        /*function getData() {
+            let sib = this.previousElementSibling;
+            let sibSib = sib.previousElementSibling;
+
+            let a = sib.innerHTML
+            let b = sibSib.src
+            
+            this.disabled = true;
+            this.innerHTML = "Added";
+
+            addToCart(a, b);
+        }*/
+        function getData() {
+            let getPrice = this.previousElementSibling;
+            let getName = getPrice.previousElementSibling;
+            let getImg = getName.previousElementSibling;
+
+            let setPrice = getPrice.innerHTML;
+            let setName = getName.innerHTML;
+            let setImg = getImg.src;
+
+            addToCart(setName, setImg, setPrice);
+
+            this.disabled = true;
+            this.innerHTML = "Added";
+
+        }
+
+        item1.addEventListener("click", getData)
+        item2.addEventListener("click", getData)
+        item3.addEventListener("click", getData)
+        item4.addEventListener("click", getData)
+        
+        function addOne() {
+            this.innerHTML = previousElementSibling
+        }
+    </script>
+</body>
+
+</html>

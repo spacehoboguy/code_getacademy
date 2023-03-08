@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 9b - Valgsetninger - Sammenligne to tekster</p>
+    <div>${}</div>
+    <p>Endre på tekstene! (Prøv også å fylle ut tall: 11, 101, 102)</p>
+    <input type="text" id="txt1" oninput="findFirst()" value="Per" /><br />
+    <input type="text" id="txt2" oninput="findFirst()" value="Pål" /><br />
+    <input type="text" id="txt3" oninput="findFirst()" value="Espen" /><br />
+    <script>
+        var infoDiv;
+        var txtDiv1 = document.getElementById('txt1');
+        var txtDiv2 = document.getElementById('txt2');
+        var txtDiv3 = document.getElementById('txt3');
+
+        findFirst();
+
+        function findFirst() {
+            var txt1 = txtDiv1.value;
+            var txt2 = txtDiv2.value;
+            var txt3 = txtDiv3.value;
+
+            infoDiv.innerText = '';
+
+            if (txt1 == txt2) infoDiv.innerHTML += 'Tekst 1 og 2 er like<br/>';
+            if (txt1 != txt2) infoDiv.innerHTML += '<del>Tekst 1 og 2 er like</del><br/>';
+
+            //if (txt1 == txt2) infoDiv.innerHTML += 'Tekst 1 og 2 er like<br/>';
+            //else infoDiv.innerHTML += '<del>Tekst 1 og 2 er like</del><br/>';
+
+            if (txt1 == txt3) infoDiv.innerHTML += 'Tekst 1 og 3 er like<br/>';
+            if (txt1 != txt3) infoDiv.innerHTML += '<del>Tekst 1 og 3 er like</del><br/>';
+            if (txt3 == txt2) infoDiv.innerHTML += 'Tekst 2 og 3 er like<br/>';
+            if (txt3 != txt2) infoDiv.innerHTML += '<del>Tekst 2 og 3 er like</del><br/>';
+
+            infoDiv.innerHTML += 'Om vi sorterer de tre tekstene, er denne den første:<br/>';
+            if (txt1 <= txt2) {
+                if (txt3 <= txt1) infoDiv.innerHTML += txt3;
+                else infoDiv.innerHTML += txt1;
+            } else {
+                if (txt3 <= txt2) infoDiv.innerHTML += txt3;
+                else infoDiv.innerHTML += txt2;
+            }
+        }
+    </script>
+</body>
+</html>

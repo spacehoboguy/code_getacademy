@@ -1,0 +1,5 @@
+Plan:
+Lage en verdi for Mat som synker over tid med setInterval() muligens. 
+    Variabel: var foodValue = 100;
+    foodValue-- muligens?
+Den må modifiseres med Spis_Mat funksjon.

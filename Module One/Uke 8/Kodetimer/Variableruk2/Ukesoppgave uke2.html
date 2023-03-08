@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformers Pics</title>
+    <style>
+        .color {
+            background-color: black;
+            color: chartreuse;
+        }
+
+        .shadow {
+            float: left;
+            height: 150px;
+            width: 150px;
+            box-shadow: chartreuse 7px 5px 5px;
+
+        }
+    </style>
+</head>
+
+<body class="color">
+
+    <img onclick="thisTransfPic(this)" class="shadow">
+    <img onclick="thisTransfPic(this)" class="shadow">
+    <img onclick="thisTransfPic(this)" class="shadow">
+    <div id="output"></div>
+
+    <script>
+
+        function ranImage() {
+            let imgVal = Math.ceil(Math.random() * 3);
+
+            if (imgVal === 1) {
+                return 'transf1.jpg';
+            }
+            if (imgVal === 2) {
+                return 'transf2.jpg';
+            }
+            else {
+                return 'transf3.jpg';
+            }
+        }
+
+        function thisTransfPic(elem) {
+            console.log(elem);
+            elem.src = ranImage();
+            document.getElementById('output').innerHTML = elem.src;
+        }
+        
+        /*function thisTransfPic(elem) {
+            console.log(elem);
+            
+            const { src, id } = ranImage()
+
+            elem.src = src;
+            document.getElementById('output').innerHTML = id;
+
+}
+        
+        function setImgText(){
+
+        }*/
+        </script>
+</body>
+
+</html>

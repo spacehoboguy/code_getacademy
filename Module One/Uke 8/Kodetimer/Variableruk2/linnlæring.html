@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakgrunnsfarge endring</title>
+    <style>
+        .colorBlock{
+            height:30px;
+        width: 100px;
+        border: 1px solid black;
+        float: left;
+        margin:10px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2vw;
+        }
+
+        .selectedBlock{
+            border: 2px dashed goldenrod;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="chosenColorDiv"></div><br>
+    <div class="colorBlock" onclick="chooseColor(this.innerHTML)" style="background-color:#4DB5F4;">#4DB5F4</div>
+    <div class="colorBlock" onclick="chooseColor(this.innerHTML)" style="background-color: #e0e01a" >#e0e01a</div>
+    <div class="colorBlock" onclick="chooseColor(this.innerHTML)" style="background-color: #ffc0cb;" >#ffc0cb</div>
+    
+    <br><br><br>
+    <div onclick="selectDiv(this)">Select Me</div>
+    <div onclick="selectDiv(this)">Or Select Me</div>
+
+    <button onclick="setBKGcolor()">Set background color</button>
+    <script>
+        const chosenColorDiv = document.getElementById('chosenColorDiv');
+        let chosenColor = "";
+        let chosenDiv = document.getElementById('chosenColorDiv');
+
+        function chooseColor(chosenHEX) {
+            chosenColor = chosenHEX;
+            chosenColorDiv.innerHTML = `Du har valgt ${chosenHEX}`;
+            chosenColorDiv.style.backgroundColor = chosenHEX;
+        }
+        function selectDiv(clickedDiv){
+            chosenDiv.classList.remove("selectedBlock");
+            chosenDiv = clickedDiv;
+            chosenDiv.classList.toggle("selectedBlock");
+            clickedDiv.style.backgroundColor = chosenColor;
+        }
+        function setBKGcolor(){
+            document.body.style.backgroundColor = chosenColor;
+        }
+    </script>
+</body>
+</html>

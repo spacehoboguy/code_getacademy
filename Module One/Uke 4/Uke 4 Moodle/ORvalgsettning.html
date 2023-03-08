@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body><!-- 
+    <select name="Farge" id="fargeselect">
+        <option onselect="endreFarge('black')">Svart</option>
+        <option onselect="endreFarge('darkblue')">Mørkblå</option>
+        <option onselect="endreFarge('lightgrey')">Lysgrå</option>
+        <option onchange="endreFarge('lightgreen')">Lysgrønn</option>
+        <option onselect="endreFarge('lightcoral')">Lysrød</option>
+    </select> -->
+    <div id="app"></div>
+    
+
+
+    <script>
+        let fargeVerdi = '';
+        //view
+        updateView();
+        function updateView(){
+            document.getElementById('app').innerHTML = /*HTML*/`
+
+                <select onchange="endreFarge()"name="Farge" id="fargeselect">
+                    <option value="black">Svart</option>
+                    <option value="darkblue">Mørkblå</option>
+                    <option value="lightgrey">Lysgrå</option>
+                    <option value="lightgreen">Lysgrønn</option>
+                    <option value="lightcoral">Lysrød</option>
+                </select>
+                <div id="fargeDiv">Endre farge her</div>
+            `;
+        }
+
+        //controller
+        function endreFarge(){
+          /*   fargeVerdi = value; */
+            mottattFarge = document.getElementById("fargeselect").value
+            document.getElementById('fargeDiv').style.backgroundColor = mottattFarge;
+            console.log(mottattFarge,'<---Dette er verdien');
+           
+            if(mottattFarge == 'black' || mottattFarge == 'darkblue') {
+                document.getElementById('fargeDiv').style.color = "white";
+            }
+            else{
+                document.getElementById('fargeDiv').style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>

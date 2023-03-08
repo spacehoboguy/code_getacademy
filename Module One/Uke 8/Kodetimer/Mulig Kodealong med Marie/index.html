@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="textBox1">Hei</div>
+    <div id="textBox2">Hallo</div>
+    <button onclick="byttInnhold()">Endre tekst</button>
+    <button onclick="dobleTekst1()">Doble tekst 1</button>
+
+    <script>
+        function byttInnhold(){
+            var text = '';
+            text = document.getElementById('textBox2').innerHTML;
+            document.getElementById('textBox1').innerHTML = text;
+        }
+        function dobleTekst1(){
+            var dobbelTekst = '';
+            dobbelTekst = document.getElementById('textBox1').innerHTML;
+            dobbelTekst += dobbelTekst;
+            document.getElementById('textBox1').innerHTML =dobbelTekst;
+        }
+    </script>
+</body>
+</html>

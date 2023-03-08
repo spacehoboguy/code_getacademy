@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Søke Start IT</title>
+    <style>
+       
+        div.item {
+            color: blue;
+            background-color: azure;
+            padding: 10px;
+            margin: 10px;
+            border: solid cornflowerblue 5px;
+            width: 20px;
+            height: 20px;
+            float: left;
+        }
+
+        div.førstPåLinja {
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+   
+    <script>
+        //Model
+        let position1 = 7;
+        let position2 = 1;
+        let position3 = 2;
+        let position4 = 5;
+        let position5 = '';
+        let position6 = 3;
+        let position7 = 8;
+        let position8 = 4;
+        let position9 = 6;
+
+        //View
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/`    
+                <div class = "item" onclick="trykk(this.)">${position1}</div>
+                <div class = "item" onclick="trykk()">${position2}</div>
+                <div class = "item" onclick="trykk()">${position3}</div>
+
+                <div class = "item førstPåLinja" onclick="trykk()">${position4}</div>
+                <div class = "item" onclick="trykk()">${position5}</div>
+                <div class = "item" onclick="trykk()">${position6}</div>
+
+                <div class = "item førstPåLinja" onclick="trykk()">${position7}</div>
+                <div class = "item" onclick="trykk()">${position8}</div>
+                <div class = "item" onclick="trykk()">${position9}</div>
+        `;
+        }
+
+        function trykk(detteTallet,){
+            console.log(detteTallet)
+            if (position2){
+
+            }
+        }
+
+/* 
+        function trykk(tagElement, alt1, alt2, alt3, alt4) {
+            if (alt1 == '') {
+                alt1 = tagElement;
+                tagElement = '';
+
+            }
+            if (alt2 == '') {
+                alt2 = tagElement;
+                tagElement = '';
+            }
+
+            if (alt3 == '') {
+                alt3 = tagElement;
+                tagElement = '';
+            }
+            if (alt4 == '') {
+                alt4 = tagElement;
+                tagElement = '';
+            }
+        } */
+
+    </script>
+</body>
+
+</html>

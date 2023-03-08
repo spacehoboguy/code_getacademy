@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="textinput" type="text" onchange="updateText()"> 
+    <div id="result">result here: </div>
+    <script>
+        //onchange - trigger funksjonen kun på enter
+        //oninput - trigger funksjonen for hvert tegn man skriver inn
+
+        // M - Model (dataene våre / variabler)
+        let text;
+        let output;
+        // V - View (det vi ser på skjermen)
+        function updateView(){
+            document.getElementById('result').innerHTML = output;
+        }
+
+        // C - Controller (det som endrer datane våre)
+
+        function updateText(){
+          text = document.getElementById('result').value;
+          checkIfIncludesSarcasm(text)
+          console.log(text) // PAUSE TIL 13.11
+        }
+        function checkIfIncludesSarcasm(textToCheck){
+            //hvis textToCheck inneholder stringen (...) 
+            // - så skal man gjøre noe i if klammene 
+            let includesSarcasm = textToCheck.includes('...');
+            console.log(includesSarcasm)
+            if(includesSarcasm == true){
+                // dersom includesSarcasm = true kommer vi hit
+                output = 'Sarcasm detected!'
+            }
+            else{
+                // dersom includesSarcasm = false kommer vi hit
+                output = 'No sarcasm detected!'
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

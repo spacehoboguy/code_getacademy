@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uke4</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        //Model
+        let tall1 = 0;
+        let tall2 = 1;
+        let størstTall = '';
+
+
+        //View
+        updateView();
+        function updateView() {
+            let html = /*HTML*/`    
+            <div>Tall1: ${tall1}</div>
+            <div>Tall2: ${tall2}</div>
+            <div>Størst Tall: ${størstTall}</div>
+            <button onclick="increaseNumber()">Increase Tall1</button>
+            <button onclick="decreaseNumber()">DecreaseNum</button>
+            <button onclick="whichIsBigger()">Finn Størst Tall</button>
+        `;
+        document.getElementById('app').innerHTML = html;
+    
+    }
+        //Controller
+        function increaseNumber(){
+            tall1++;
+            updateView();
+        }
+        function decreaseNumber(){
+            tall2--;
+            updateView();
+        }
+        function whichIsBigger(){
+            if(tall1>tall2){
+                størstTall='Tall 1 er størst!'
+            }
+            else if(tall2>tall1){
+                størstTall='Tall2 er størst'
+            }
+            else{
+                størstTall='Tallene er like :)'
+            }
+            updateView();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphingochi</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script>
+        //M
+        let foodValue = 100;
+
+        //V
+        updateView();
+        function updateView(){
+            document.getElementById('app').innerHTML = /*HTML*/`
+            <div id="foodBar">${foodValue}</div>
+            <button onclick="giveFish()">GiveFish</button>
+
+            `;
+        }
+
+        //C
+        //foodLoss()
+        function foodLoss(){
+        foodValue--;
+        if (foodValue === 0){
+            clearInterval(foodTick)
+            
+        }
+        updateView();
+        }
+
+        const foodTick = setInterval(foodLoss, 1000);
+
+        function giveFish(){
+            foodValue = foodValue+20;
+            updateView;
+        }
+
+    </script>
+</body>
+</html>

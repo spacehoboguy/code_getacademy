@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+            color: chartreuse;
+        }
+        .circle-group{
+            display: grid;
+            grid-template-columns: repeat(5,10rem);
+            grid-template-rows: repeat(5,10rem);
+            gap: 1rem;
+        }
+        .circle{
+            border-radius: 50%;
+        }
+        .lightOn{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle-group" id="circle-group"></div>
+    <div class="timer">Time</div>
+    <script>
+        
+        updateView()
+        function updateView(){
+            let html = ``;
+            let selectedLightIndex = Math.floor(Math.random() * 25)
+            
+            for (let i=0; i<25; i++){
+                if(i==selectedLightIndex){
+                    html += `<div onclick="clickedLight()" class="circle lightOn" "></div>`;
+                }
+                else{
+                    html +=`<div class="circle"></div>`;
+                }
+                console.log(selectedLightIndex);
+            }
+            document.getElementById('circle-group').innerHTML = html;
+        }
+        function clickedLight(){
+            updateView();
+        }
+    </script>
+</body>
+</html>

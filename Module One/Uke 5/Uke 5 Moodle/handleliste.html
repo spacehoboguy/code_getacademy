@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        //Model
+        let shoppingCart = ['Tomater', 'Twix'];
+
+        //View
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/`  
+            <h2>Handleliste</h2>
+            <input type="text" onchange="addToShoppingCart(this.value)">
+            <button onclick="updateView()">Add</button>
+            `;
+
+            for (let i = 0; i < shoppingCart.length; i++) {
+                let shoppingCartItem = shoppingCart[i];
+                document.getElementById('app').innerHTML += `<ul><li>${shoppingCartItem}</li></ul>`;
+            }
+
+        }
+
+        //Controller
+        function addToShoppingCart(cartItem) {
+            let newItem = cartItem;
+            shoppingCart.push(newItem);
+            updateView()
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codealong</title>
+    <style>
+        .btnstyle {
+            background-color: chartreuse;
+            height: 100px;
+            width: 200px;
+            border: 0;
+            border-radius: 5%;
+
+        }
+
+        .color {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="terribleHeader" onclick="changeText()">Marie</h1>
+        <button class="btnstyle" onclick="changeColor()">ChangeBG Color</button>
+    </div>
+
+    <script>
+        let currentText = 'HeiHei'
+       
+
+        function changeText() {
+            document.getElementById('terribleHeader').innerHTML = currentText;
+        }
+
+        function changeColor(color) {
+            /*let red = 0;
+            let green = 0;
+            let blue = 0;*/
+
+            let red = Math.round(Math.random() * 255);
+            let green = Math.round(Math.random() * 255);
+            let blue = Math.round(Math.random() * 255);
+
+            //currentText = Math.floor(Math.random()*256);
+
+            currentText = `red: ${red}, blue: ${blue}, green: ${green}`;
+            document.body.style.backgroundColor = `rgb(${red},${blue},${green})`;
+        }
+    </script>
+</body>
+
+</html>

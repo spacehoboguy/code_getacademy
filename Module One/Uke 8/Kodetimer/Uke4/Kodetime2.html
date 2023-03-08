@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kodetime #2</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        //model
+        let penger = 0;
+        let randTall;
+        let gevinst = "Du har ikke fått noe."
+
+        //view
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/`
+            <img onclick="getBall()"height="200" src="gumball.jpg"></br>
+            <button onclick="addMoney()">Legg på Penger</button>
+            <div>Du har lagt på ${penger} Kr.</div>
+            <div>${gevinst}</div>
+
+        `;
+        }
+
+        //cont
+        function addMoney(){
+            penger += 10;
+            updateView();
+        }
+        function getBall(){
+            if (penger >= 20){
+                gevinst = getRandomGumballColor();
+                penger -= 20;
+            }
+            else {
+            }
+            updateView()
+        }
+        function getRandomGumballColor(){
+            randTall = Math.ceil(Math.random() * 3);
+            if (randTall == 1){
+                return "You got a Pink Gumball!!";
+            }
+            else if (randTall == 2){                
+                return "You got a Green Gumball!!";
+            }
+            else {                
+                return "You got a Yellow Gumball!!";
+            }
+        }
+    </script>
+</body>
+
+</html>

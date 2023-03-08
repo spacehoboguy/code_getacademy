@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<input type="number" onkeydown="if (event.code === 'Enter') addNumber(this);" />
+<div id="stats"></div>
+<script>
+    var numbers = [];
+    var statsDiv = document.getElementById('stats');
+
+    function addNumber(inputTag) {
+        numbers.push(parseInt(inputTag.value));
+        inputTag.value = '';
+        show();
+    }
+
+    function calcStats() {
+        var stats = {};
+        stats.min = numbers[0];
+        stats.max = numbers[0];
+        stats.sum = 0;
+        for (let n of numbers) {
+            if (n < stats.min) stats.min = n;
+            if (n > stats.max) stats.max = n;
+            stats.sum += n;
+        }
+        stats.count = numbers.length;
+        stats.avg = stats.sum / stats.count;
+        return stats;
+    }
+
+    function show() {
+        const numbersHtml = `<ul>${numbers.map(n => `<li>${n}</li>`).join('')}</ul>`;
+        const stats = calcStats();
+        const statsHtml = 
+            `<table>
+                    <tr><td>Min</td><td>${stats.min}</td></tr>
+                    <tr><td>Max</td><td>${stats.max}</td></tr>
+                    <tr><td>Sum</td><td>${stats.sum}</td></tr>
+                    <tr><td>Snitt</td><td>${stats.avg}</td></tr>
+                    <tr><td>Antall</td><td>${stats.count}</td></tr>
+                </table>`;
+        statsDiv.innerHTML = statsHtml + numbersHtml;
+    }
+
+</script>
+</body>
+</html>

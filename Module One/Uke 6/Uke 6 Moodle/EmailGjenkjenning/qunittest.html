@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.4.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.4.js"></script>
+  <script src="email.js"></script>
+    <script>
+
+ 
+  QUnit.test("Is email with @?", function (assert) {
+            const actual = recogEmail('ph.olafsen@gmail.com');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+  QUnit.test("Is email without ' '", function (assert) {
+            const actual = recogEmail('ph.olafsen@gmail.com ');
+            const expected = 'ph.olafsen@gmail.com';
+            assert.equal(actual, expected);
+        });
+
+</script>
+  
+</body>
+</html>

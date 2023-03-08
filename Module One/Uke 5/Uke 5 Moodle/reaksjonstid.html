@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+            color:white;
+        }
+        .circgroup {
+            display: grid;
+            grid-template-columns: repeat(5,9rem);
+            grid-template-rows: repeat(5,9rem);
+        }
+        .circles{
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            /* background-color: aqua; */
+        }
+        .lightOn {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="circgroup" id="circle-group"></div>
+    <div id="timer"></div>
+
+
+    <script>
+        //model
+            let startTime;
+            let finishTime; 
+            let spentMilliseconds = Math.floor(finishTime - startTime);
+            let spentSeconds = spentMilliseconds / 1000;
+        //view
+        updateView();
+        function updateView(){
+            let html = /*HTML*/``; 
+            let selectedLampIndex = Math.floor(Math.random()*25);
+            for (let i = 0; i<25; i++){
+                if(i==selectedLampIndex){
+                    html += `<div onclick="clickedLamp()" class="circles lightOn"></div>`;
+                }
+                else{
+                    html += `<div class="circles"></div>`;
+                }
+                startTime = new Date().getTime();
+            }
+            document.getElementById('circle-group').innerHTML = html;
+            
+        }
+
+        //controller
+        function clickedLamp(){
+            finishTime = new Date().getTime();
+            let spentMilliseconds = finishTime - startTime;
+            let spentSeconds =(spentMilliseconds / 1000).toFixed(2);
+            document.getElementById('timer').innerHTML = `${spentSeconds}s`;
+            updateView()
+        }
+
+
+
+
+        let numCircles = 25;
+        let finishTime;
+        let startTime;
+
+function createCricles() {
+  startTime = new Date().getTime();
+  let randomNumber = Math.floor(Math.random() * numCircles);
+  console.log(randomNumber);
+  for (let i = 0; i < numCircles; i++) {
+    let newCricle = document.createElement("div");
+    if (i == randomNumber) {
+      newCricle.classList.add("lightOn");
+      newCricle.addEventListener("click", timeClear);
+    }
+    newCricle.classList.add("circleDiv");
+    newCricle.id = "circle" + i;
+    document.getElementById("main").appendChild(newCricle);
+  }
+}
+
+function timeClear() {
+  finishTime = new Date().getTime();
+  let spentMilliseconds = Math.floor(finishTime - startTime);
+  let spentSeconds = spentMilliseconds / 1000;
+  document.getElementById(
+    "timer"
+  ).innerHTML = `${spentSeconds}s </br> ${spentMilliseconds}ms`;
+  document.getElementById("main").innerHTML = "";
+  createCricles();
+}
+
+    </script>
+</body>
+</html>

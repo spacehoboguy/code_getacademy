@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handleliste Ukesoppgave</title>
+    <style>
+        *{
+          font-family: Georgia, 'Times New Roman', Times, serif; 
+          background-color: black; 
+        }
+        button {
+            align-items: flex-end;
+            border-radius: 5%;
+            color: yellow;
+            border-color: yellow;
+            background-color: rgba(208, 255, 0, 0.267);
+        }
+        input {
+            border-color: yellow;
+            color: yellow;
+        }
+        h2 {
+            color: yellow;
+        }
+        div{
+            display:grid;
+        }
+        ul {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        //model
+        let shoppingCart = ['Tomat', 'Brød'];
+        let cartItem;
+        let newItem = 'Input item here';
+
+        //view
+        updateView()
+        function updateView() {
+            let html = document.getElementById('app');
+            html.innerHTML = /*HTML*/`
+                <H2>Handleliste</H2>   
+                <input type="text" oninput="newItem = this.value">
+                <button onclick="addToCart()">Legg til vare</button>
+                
+            `;
+            for(let i=0;i<shoppingCart.length;i++){
+                let cartItem = shoppingCart[i];
+                html.innerHTML += /*HTML*/`
+                <div>
+                <ul><li>${cartItem}</li></ul>
+                <button onclick="removeFromCart(${i})">Fjern</button>
+                <button onclick="renameInCart(${i})">Rename</button>
+                </div>`
+            }
+            console.log(shoppingCart);
+        }
+
+        //controller
+        function addToCart() {
+            
+            shoppingCart.push(newItem);
+            newItem='';
+            updateView();
+        }
+
+        function removeFromCart(index) {
+            shoppingCart.splice(index,1)
+            updateView();
+        }
+        
+        function renameInCart(index) {
+            shoppingCart[index] = newItem;
+            updateView();
+        }
+
+       
+    </script>
+</body>
+
+</html>
