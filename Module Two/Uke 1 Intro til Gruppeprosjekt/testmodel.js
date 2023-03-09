@@ -2,6 +2,7 @@ const mymodel = {
 
     app: {
         state: userView,
+        editMode: false,
     },
 
     input: {
@@ -42,6 +43,39 @@ const mymodel = {
                             {
                                 altId: 4,
                                 altTxt: 'Torsdag 15.mars',
+                                noOfReplies: 1,
+                            },
+                            {
+                                altId: 5,
+                                userAnswer: true,
+                                altTxt: "Annet"
+                            }
+                        ]
+                },
+                {
+                    spmId: 3,
+                    spmTxt: 'Hvilket klokkeslett passer best?',
+                    spmAlternativer:
+                        [
+                            {
+                                altId: 1,
+                                altTxt: '10:00',
+                                noOfReplies: 1,
+
+                            },
+                            {
+                                altId: 2,
+                                altTxt: '12:30',
+                                noOfReplies: 1,
+                            },
+                            {
+                                altId: 3,
+                                altTxt: '14:00',
+                                noOfReplies: 1,
+                            },
+                            {
+                                altId: 4,
+                                altTxt: '14:30',
                                 noOfReplies: 1,
                             },
                             {
