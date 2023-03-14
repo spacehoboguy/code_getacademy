@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+tr :nth-child(even) {
+    background-color: antiquewhite;
+}
+
+table,
+td {
+    border: 1px solid black;
+}
+
+fieldset {
+    display: flex;
+    float: left;
+    flex-flow: column;
+    max-width: 240px;
+}

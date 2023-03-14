@@ -1,20 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El-Varmekalkulator</title>
-    <script src="el-varmekalkulator.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div>
-        <input type="text" name="" id="newHouseGoodInsulation" onchange="let inputArea =this.value">
-        <button onclick="calcWatt(inputArea,100)">Calculate Watt</button>
-        <div id="display"></div>
-    </div>
-<script>
 
-</script>
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        //model
+        let watt = 0;
+        let forOutput;
+        let houseTypes = [
+            {
+                id: 1,
+                name: "newHouseGoodInsulation",
+                insulationFactor: 100,
+            },
+            {
+                id: 2,
+                name: "oldHouseBadInsulation",
+                insulationFactor: 120,
+            },
+            {
+                id: 3,
+                name: "extraGoodInsulation",
+                insulationFactor: 90,
+            }
+        ];
+        let rooms = [
+            {
+                id: 1,
+                roomName: "Soverom",
+                roomSize: 10,
+                noOfOvens: 3,
+                sumWatt: 300,
+                noOfOvensAtMinWatt: 1,
+                insulationFactor: 100
+            },
+            {
+                id: 2,
+                roomName: "Baderom",
+                roomSize: 6,
+                noOfOvens: 1,
+                sumWatt: 100,
+                noOfOvensAtMinWatt: 1,
+                insulationFactor: 100
+            }
+        ]
+
+        //controller
+        function calcWatt(inputArea, inputEffect) {
+            let watt = inputArea * inputEffect;
+            console.log(watt, "Watt")
+        }
+
+        function generateTable(){
+            for (let i = 0; i < rooms.length; i++) {
+                html += `
+                <tr>
+                    <td>${rooms[i].roomSize}</td>
+                    <td>${rooms[i].noOfOvens}</td>
+                    <td>${rooms[i].sumWatt}</td>
+                    <td>${rooms[i].noOfOvensAtMinWatt}</td>
+                </tr>`      
+            }
+        }
+
+        //view
+        updateView();
+        function updateView() {
+            let html = /* html */` 
+            <fieldset>
+                <legend>Velg hustype:</legend>
+                    <input type="radio" id="newHouseGoodInsulation" name="Hustyper" value="100" checked>
+                    <label for="newHouseGoodInsulation">Nytt hus m/ god isolasjon</label>
+                    <input type="radio" id="oldHouseBadInsulation" name="Hustyper" value="120">
+                    <label for="oldHouseBadInsulation">Gammelt hus m/ dårlig isolasjon</label>
+                    <input type="radio" id="extraGoodInsulation" name="Hustyper" value="90">
+                    <label for="extraGoodInsulation">Ekstra godt isolert hus</label>
+            </fieldset>
+
+            Romstørrelse: <input type="text" placeholder="m^2">
+            # av Ovner: <input type="number" placeholder="tall">
+            
+            <button>Kalkuler</button>
+    
+            <table>
+                <tr>
+                    <td><b>Romstørrelse</b></td>
+                    <td><b>Antall ovner</b></td>
+                    <td><b>Sum Watt</b></td>
+                    <td><b># av ovner m/Min wattstyrke</b></td>                    
+                </tr>
+                <tr>
+                    <td>${rooms[0].roomSize}m^2</td>
+                    <td>${rooms[0].noOfOvens}stk</td>
+                    <td>${rooms[0].sumWatt}</td>
+                    <td>${rooms[0].noOfOvensAtMinWatt}</td>
+                </tr>
+                <tr>
+                    <td>${rooms[1].roomSize}m^2</td>
+                    <td>${rooms[1].noOfOvens}stk</td>
+                    <td>${rooms[1].sumWatt}</td>
+                    <td>${rooms[1].noOfOvensAtMinWatt}</td>
+                </tr>
+            </table>
+            `;
+              
+           
+            document.getElementById('app').innerHTML = html;
+        }
+
+    </script>
+
 </body>
+
 </html>
