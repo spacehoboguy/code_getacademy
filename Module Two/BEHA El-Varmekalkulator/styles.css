@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
 }
-tr :nth-child(even) {
+td :nth-child() {
     background-color: antiquewhite;
 }
 
