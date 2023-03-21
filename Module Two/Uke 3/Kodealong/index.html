@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div id="animalDiv"></div>
+    <input type="text" onchange="addNewAnimal(this.value)">
+    <button>Add Animal</button>
+    <button onclick="getRandAnimal()">randomAnimal</button>
+    <script>
+        let inputAnimal;
+
+        let animals = ['lion','elefant']
+
+        function addNewAnimal (inputAnimal){
+            animals.push(inputAnimal)
+            console.log(animals)
+        }
+
+
+        function getRandAnimal() {
+            let randomAnimal = Math.floor(Math.random() * animals.length);
+            document.getElementById("animalDiv").innerHTML = animals[randomAnimal]
+            console.log(randomAnimal)
+        }
+    </script>
+</body>
+
+</html>

@@ -61,17 +61,7 @@
             console.log(watt, "Watt")
         }
 
-        function generateTable(){
-            for (let i = 0; i < rooms.length; i++) {
-                html += `
-                <tr>
-                    <td>${rooms[i].roomSize}</td>
-                    <td>${rooms[i].noOfOvens}</td>
-                    <td>${rooms[i].sumWatt}</td>
-                    <td>${rooms[i].noOfOvensAtMinWatt}</td>
-                </tr>`      
-            }
-        }
+
 
         //view
         updateView();
@@ -98,23 +88,23 @@
                     <td><b>Antall ovner</b></td>
                     <td><b>Sum Watt</b></td>
                     <td><b># av ovner m/Min wattstyrke</b></td>                    
+                </tr>;
+                </table>
+                `;
+                rooms.forEach(placeRows(i<rooms.length))
+        
+                function placeRows (){
+            html += `
+            <tr>
+                    <td>${rooms[i].roomSize}</td>
+                    <td>${rooms[i].noOfOvens}</td>
+                    <td>${rooms[i].sumWatt}</td>
+                    <td>${rooms[i].noOfOvensAtMinWatt}</td>                    
                 </tr>
-                <tr>
-                    <td>${rooms[0].roomSize}m^2</td>
-                    <td>${rooms[0].noOfOvens}stk</td>
-                    <td>${rooms[0].sumWatt}</td>
-                    <td>${rooms[0].noOfOvensAtMinWatt}</td>
-                </tr>
-                <tr>
-                    <td>${rooms[1].roomSize}m^2</td>
-                    <td>${rooms[1].noOfOvens}stk</td>
-                    <td>${rooms[1].sumWatt}</td>
-                    <td>${rooms[1].noOfOvensAtMinWatt}</td>
-                </tr>
-            </table>
             `;
-              
-           
+        }
+
+
             document.getElementById('app').innerHTML = html;
         }
 
