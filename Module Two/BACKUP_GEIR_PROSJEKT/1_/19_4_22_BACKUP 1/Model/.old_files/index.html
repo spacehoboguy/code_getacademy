@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ProfilepageModel.js"></script>
+    <script src="ProfilepageView.js"></script>
+    <script src="ProfilepageController.js"></script>
+    <script src="Model.js"></script>
+    <script src="loginPageController.js"></script>
+    <script src="loginPageView.js"></script>
+    <script src="logPageController.js"></script>
+    <script src="logPageView.js"></script>
+    <script src="common.js"></script>
+    <script src="menupage.js"></script>
+    <script src="newUserPage.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <script>
+
+        updateView();
+        function updateView() {
+            if (model.app.currentPage == 'loginPage') updateViewLoginPage();
+            else if (model.app.currentPage == 'logPage') updateViewLogPage();
+            else document.getElementById('app').innerHTML = model.app.currentPage;
+        }
+
+        function goToLogPage() {
+            model.app.currentPage = 'logPage';
+            model.inputs.logPage = {
+                whatHaveYouLearnedToday: '',
+                selectedWeek: 1,
+                selectedDay: 1,
+                answers: []
+            };
+            updateView();
+        }
+
+    </script>
+</body>
+
+</html>
